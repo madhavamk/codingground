@@ -14,6 +14,8 @@ NODE root;
 NODE getNode();
 void freeNode (NODE ptr);
 NODE insert(NODE root, int data);
+int max(int a, int b);
+int height(NODE root);
 void print(NODE root);
 
 #endif

@@ -66,3 +66,17 @@ void print(NODE root)
     printf("%d ",root->data);
     print(root->rchild);
 }
+
+int max(int a, int b)
+{
+    (a > b)? return a: return b;
+}
+
+int height(NODE root)
+{
+    if( root == NULL)
+    {
+        return 0;
+    }
+    return 1 + max(height(root->lchild),height(root->rchild));
+}
