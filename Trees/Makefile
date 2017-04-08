@@ -13,4 +13,4 @@ counter.o:  tree_util.c tree_util.h
 	$(CC) $(CFLAGS) -c tree_util.c
 	
 clean: 
-	$(RM) count *.o *~
+	$(RM) tree *.o *~
