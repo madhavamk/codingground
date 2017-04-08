@@ -72,15 +72,32 @@ int max(int a, int b)
     return a >= b ? a: b;
 }
 
+/*
+ * Function to find height of the tree
+ * Height of a tree is maximum level of a leaf in the tree
+ * in other terms length of longest path from root to deepest node in the tree(leaf)
+ * Height of root node is 0
+ * Height of empty tree is -1
+ */
 int height(NODE root)
 {
     if( root == NULL)
     {
-        return 0;
+        return -1;
     }
     return 1 + max(height(root->lchild),height(root->rchild));
 }
 
+/*
+ * Function to find diameter of the tree
+ * Diameter of the tree is length of longest path
+ * from one leaf to another leaf in the tree
+ * The path could go via root or with in left or right subtree
+ * Hence return Max of
+ * 1. Diameter of left subtree
+ * 2. Diameter of right subtree
+ * 3. Height of left subtree + Height of right subtree +1 (Path via root)
+ */
 int diameter_tree(NODE root)
 {
     int lheight, rheight,ldiameter,rdiameter;
@@ -96,6 +113,9 @@ int diameter_tree(NODE root)
     return max(lheight+rheight+1, max(ldiameter,rdiameter));
 }
 
+/*
+ * Function to print the tree in tree format sideways
+ */
 void print_pretty(NODE root, int spaces)
 {
     int i;
