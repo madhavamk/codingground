@@ -95,3 +95,16 @@ int diameter_tree(NODE root)
     
     return max(lheight+rheight+1, max(ldiameter,rdiameter));
 }
+
+void print_pretty(NODE root, int spaces)
+{
+    int i;
+    if( root != NULL) {
+        print_pretty(root->rchild, spaces + 4);
+        for(i = 0; i < spaces; i++) {
+            printf(" ");
+        }
+        printf("%d\n",root->data);
+        print_pretty(root->lchild, spaces + 4);
+    }
+}

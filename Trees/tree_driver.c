@@ -8,7 +8,7 @@ int main()
     for (;;)
     {
         printf("\nEnter your choice\n");
-        printf("1. Insert   2.Display 3. Diameter_tree 4.Exit\n");
+        printf("1. Insert   2.Display 3. Diameter_tree 4.Pretty Print 5:Exit\n");
         scanf("%d",&choice);
         switch (choice){
             case 1:
@@ -27,6 +27,16 @@ int main()
                 break;
             case 3:
                 printf("\nDiameter of tree is %d\n",diameter_tree(root));
+                break;
+            case 4:
+                if (root == NULL) {
+                    printf("\nTree is empty\n");
+                } else {
+                    printf("Tree contents are\n");
+                    print_pretty(root, 0);
+                    printf("\n");
+                }
+                break;
             default:
                 exit(0);
         }
