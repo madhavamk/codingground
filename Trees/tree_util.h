@@ -17,5 +17,6 @@ NODE insert(NODE root, int data);
 int max(int a, int b);
 int height(NODE root);
 void print(NODE root);
+int diameter_tree(NODE root);
 
 #endif

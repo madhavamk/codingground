@@ -69,7 +69,7 @@ void print(NODE root)
 
 int max(int a, int b)
 {
-    (a > b)? return a: return b;
+    return a >= b ? a: b;
 }
 
 int height(NODE root)
@@ -79,4 +79,19 @@ int height(NODE root)
         return 0;
     }
     return 1 + max(height(root->lchild),height(root->rchild));
+}
+
+int diameter_tree(NODE root)
+{
+    int lheight, rheight,ldiameter,rdiameter;
+    if( root == NULL) {
+        return 0;
+    }
+    lheight = height(root->lchild);
+    rheight = height(root->rchild);
+    
+    ldiameter = diameter_tree(root->lchild);
+    rdiameter = diameter_tree(root->rchild);
+    
+    return max(lheight+rheight+1, max(ldiameter,rdiameter));
 }
