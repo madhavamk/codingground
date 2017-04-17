@@ -9,6 +9,7 @@ struct node {
 
 typedef struct node* NODE;
 
+typedef int bool;
 NODE root;
 
 NODE getNode();
@@ -19,5 +20,7 @@ int height(NODE root);
 void print(NODE root);
 void print_pretty(NODE root, int spaces);
 int diameter_tree(NODE root);
+NODE lowest_common_ancestor(NODE root, int k1, int k2);
+bool is_present(NODE root, int n);
 
 #endif

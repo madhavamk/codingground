@@ -128,3 +128,34 @@ void print_pretty(NODE root, int spaces)
         print_pretty(root->lchild, spaces + 4);
     }
 }
+
+/* Function to calculate LCA of two nodes in a BST */
+NODE lowest_common_ancestor(NODE root, int n1, int n2)
+{
+    if (root == NULL) {
+        return NULL;
+    }
+    /* If root is greater than both n1 and n2 */
+    if (root->data > n1 && root->data > n2) {
+        return lowest_common_ancestor(root->lchild,n1,n2);
+    } else if (root->data < n1 && root->data < n2) {
+        return lowest_common_ancestor(root->rchild,n1,n2);
+    }   
+    return root;
+}
+
+bool is_present(NODE root, int n)
+{
+    if (root == NULL) {
+        return 0;
+    }
+    if (root->data == n) {
+        return 1;
+    } else if (root->data > n) {
+        return is_present(root->lchild, n);
+    } else {
+        return is_present(root->rchild, n);
+    }
+}
+    
+
