@@ -7,7 +7,7 @@ def selection_sort(a):
                 small = j
         a[small],a[i] = a[i],a[small]
 
-print("************Implementation of BubbleSort***********")
+print("************Implementation of SelectionSort***********")
 a = [23,421,11,-11,423]
 selection_sort(a)
 print(a)
