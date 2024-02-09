@@ -1,6 +1,6 @@
 def insertion_sort(a):
     n = len(a)
-    for i in range(1, n - 1):
+    for i in range(1, n):
         element = a[i]
         j = i - 1
         while j >= 0 and element < a[j]:
